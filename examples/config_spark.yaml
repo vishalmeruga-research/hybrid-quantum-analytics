@@ -1,0 +1,27 @@
+engine: spark
+seed: 7
+
+spark:
+  app_name: qabda
+  master: local[*]
+
+input:
+  path: examples/sample_data.csv
+  target_col: y
+  id_cols: []
+
+preprocessing:
+  normalize: standard
+
+reducer:
+  name: classical_pca
+  n_components: 8
+
+model:
+  name: rf
+  rf:
+    n_estimators: 200
+    max_depth: 8
+
+output:
+  dir: artifacts

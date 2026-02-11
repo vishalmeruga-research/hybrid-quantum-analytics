@@ -1,0 +1,31 @@
+engine: local
+seed: 7
+
+input:
+  path: examples/sample_data.csv
+  target_col: y
+  id_cols: []
+
+preprocessing:
+  normalize: standard
+  max_features: 200  # crude filter for demo; real systems should use domain-driven pruning
+
+reducer:
+  name: qpca_surrogate
+  n_components: 8
+  # qpca_surrogate settings:
+  feature_map: zz_feature_map
+  reps: 2
+
+model:
+  name: vqc
+  vqc:
+    backend: pennylane_default_qubit
+    n_qubits: 8
+    layers: 2
+    lr: 0.2
+    epochs: 25
+    batch_size: 32
+
+output:
+  dir: artifacts
