@@ -112,16 +112,6 @@ Key knobs:
 - `model`: `rf`, `svm`, or `vqc`
 - `quantum_backend`: `qiskit_aer` or `pennylane_default_qubit`
 
-## What “production-ready” means here
-
-✅ Clean module boundaries + interfaces  
-✅ Config-driven execution (YAML)  
-✅ Logging, artifact outputs, and deterministic seeding  
-✅ Optional dependencies (Spark/Qiskit/PennyLane)  
-✅ Unit tests + GitHub Actions CI  
-✅ Docstrings + type hints  
-✅ A CLI you can wire into Airflow/Step Functions/Jenkins
-
 ## Where you should challenge the paper (and your own assumptions)
 
 - **Amplitude encoding** is not “free”. Preparing an arbitrary amplitude state can be expensive.
